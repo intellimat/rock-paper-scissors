@@ -13,11 +13,11 @@
         <div class="container">
             <header class="header">
                 <h1>Rock Paper Scissors</h1>
-                <button id="restart" class="restart-btn">Restart game</button>
+                <button id="restartButton" class="restart-btn">Restart game</button>
             </header>
             <div id="score" class="score">
-                <p>Player: 0</p>
-                <p>Computer: 0</p>
+                <p id="userScore">Player: 0</p>
+                <p id="computerScore">Computer: 0</p>
             </div>
             <h2>Make your selection</h2>
             <div class="choices grid-container">
@@ -29,9 +29,7 @@
             <!-- Modal -->
             <div class="modal">
                 <div id="result" class="modal-content">
-                    <h1>You Win</h1>
-                    <i class="fas fa-hand-rock fa-8x"></i>
-                    <p>Computer chose rock</p>
+                    <button id="closeModalButton" class="closeButton">Close</button>
                 </div>
             </div>
         </div>

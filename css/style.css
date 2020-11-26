@@ -43,7 +43,7 @@ body {
     margin-bottom: 1rem;
 }
 
-.restart-btn:hover {
+.restart-btn:hover, .closeButton:hover {
     background: var(--restart-color);
     color: #fff;
 }
@@ -130,10 +130,21 @@ body {
     margin: 10% auto;
     width: 300px;
     border-radius: 10px;
-    padding: 3rem;
+    padding: 2rem;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
     animation-name: modalopen;
     animation-duration: var(--modal-duration);
+}
+
+.closeButton {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    font-size: 1.2rem;
+    padding: 6px;
+    cursor: pointer;
+    position: relative;
+    left: 5rem;
+    border-style: hidden;
 }
   
 .modal-content h1 {
