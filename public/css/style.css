@@ -179,11 +179,19 @@ body {
     .choice {
         font-size: 3rem;
     }
+
+    .choices {
+        margin-top: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 425px) and  (min-height: 569px){ /* All the other mobile phones */
     .choice {
         font-size: 5rem;
+    }
+
+    .choices {
+        margin-top: 2rem;
     }
 }
 
