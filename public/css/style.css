@@ -40,7 +40,8 @@ body {
     cursor: pointer;
     outline: none;
     border: none;
-    margin-bottom: 1rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
 }
 
 .restart-btn:hover, .closeButton:hover {
