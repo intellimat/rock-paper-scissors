@@ -22,33 +22,37 @@ const scoreIncrements = {
     lose: 0
 };
 
-// IIFE main function
+// IIFE main function, all the upper logic is here
 (function () {
+    // Event listener for closeButton in the modal
     let closeModalButton = document.getElementById('closeModalButton');
     closeModalButton.addEventListener('click', () => showModal(false));
 
+    // Event listener fo the restart button
     document.getElementById('restartButton').addEventListener('click', () => {
-        scores.user = 0;
-        scores.computer = 0;
+        resetScores();
+
         renderScores();
-        setRandomChoice();
-        userChoice = '';
+
+        resetChoices();
+
         showRestartButton(false);
     })
 
-    setRandomChoice();
-
+    // Event listener for user choice
     let choices = document.getElementsByClassName('choice');
     for(let i=0; i<choices.length; i++){
         let choice = choices[i];
         choice.addEventListener('click', function(event){
+            setRandomChoice();
             userChoice = choice.getAttribute('id');
-            console.log('User choice is: ' + userChoice);
 
             let winner = getWinner();
             updateModal(winner);
             updateScores(winner);
             showModal(true);
+                     
+            resetChoices(); // Let's set to '' every player's choice  
             showRestartButton(true);
         })
     }
@@ -160,8 +164,15 @@ function showModal(boolean){
         let modalContent = document.getElementById('result');
         modalContent.removeChild(modalContent.getElementsByTagName('h1')[0]);
         modalContent.removeChild(modalContent.getElementsByTagName('p')[0]);
-        // Let's also reset the computer choice
-        setRandomChoice();
-        userChoice = '';
     }
+}
+
+function resetChoices() {
+    userChoice = '';
+    randomChoice = '';
+}
+
+function resetScores(){
+    scores.user = 0;
+    scores.computer = 0;
 }
